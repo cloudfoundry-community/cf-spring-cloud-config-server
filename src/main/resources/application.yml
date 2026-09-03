@@ -1,6 +1,6 @@
 server:
   forward-headers-strategy: framework
-  port: 8888
+  port: ${PORT:8888}
 spring:
   cloud:
     config:
@@ -35,6 +35,7 @@ spring:
           jwk-set-uri: ${uaa.jwk-set-uri}
   mvc:
     pathmatch:
+      matching-strategy: ant_path_matcher
       use-suffix-pattern: true
       use-registered-suffix-pattern: false
 
